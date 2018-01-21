@@ -7,11 +7,11 @@ var fs = require('fs');
 const electron = require('electron');
 const path = require('path');
 const url = require('url');
-const readline = require('readline');
+/*const readline = require('readline');
 const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
-  });
+  });*/
 
 var logger = require("logger-electron");
 logger = new logger({
@@ -21,14 +21,14 @@ logger.enableLogging();
 logger.log("First message Deepak jha electron application 11:59");
 
 const { app, BrowserWindow, Menu, ipcMain } = electron;
-
+/*
 rl.on('line', function(line){
     logger.log('I have received this data:- ');
-});
-/*process.stdin.setEncoding('utf8');
+});*/
+process.stdin.setEncoding('utf8');
 process.stdin.on('data', (chunk) => {
     logger.log('I have received this data:- '+chunk);
-});*/
+});
 
 /*const electron = require('electron');
 const path = require('path');
