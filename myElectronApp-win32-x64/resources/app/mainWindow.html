@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        const electron = require('electron');
+        const {ipcRenderer} = electron;
+        
+        window.addEventListener("load", function(event) {            
+            document.getElementById("sendMsg").addEventListener("click", function(e){
+                e.preventDefault();
+                document.getElementById("msgs").innerHTML = 'Sending :'+document.querySelector('#textMsg').value;
+                ipcRenderer.send('app:message',{text:"Hi There"});//document.querySelector('#textMsg').value);
+            });
+        });
+    </script>
+</head>
+<body>
+    Chrome Extension Messaging App
+    <br>
+    <div id="msgs" style="display:none">These are the msgs: </div>
+</body>
+</html>
